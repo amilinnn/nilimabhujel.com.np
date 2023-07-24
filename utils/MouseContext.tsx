@@ -1,16 +1,15 @@
 import React, { createContext, useContext, useState } from "react";
-import Data, { Contexts } from "../types/data";
 
-const appContextDefaultValues: Contexts.MouseContext = {
+const appContextDefaultValues: any = {
   cursorType: "",
   cursorChangeHandler: () => {},
 };
 
-const MouseContext = createContext<Contexts.MouseContext>(
+const MouseContext = createContext<any>(
   appContextDefaultValues
 );
 
-export function useMouseCursor(): Contexts.MouseContext {
+export function useMouseCursor(): any {
   return useContext(MouseContext);
 }
 
