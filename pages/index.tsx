@@ -1,6 +1,4 @@
 import Head from "next/head";
-import { PageData } from "@/types/data";
-import { getHomePageData } from "@/service/homepage";
 import Aboutme from "@/components/Aboutme";
 import Banner from "@/components/Banner";
 import Project from "@/components/Project";
@@ -14,7 +12,7 @@ import ScrollArrow from "@/components/shared/ScrollArrow";
 //   };
 // };
 
-export default function Home({ homes }: PageData.IndexPageData) {
+export default function Home() {
   return (
     <>
       <Head>
