@@ -12,18 +12,19 @@ const Project = () => {
         onMouseLeave={() => cursorChangeHandler("")}
       >
         <div className="grid gap-5">
-          <div>
-            <img src="../assets/cart.png" alt="Halcyon Theme screenshot" />
-          </div>
-          <div className="lg:absolute lg:bottom-0 lg:right-0 lg:w-[520px] px-8 py-4 bg-[#B1E3E0]">
-            <h1>The leader in interactive VR</h1>
-            <p>
-              Founded in 2011, Loopstudios has been producing world-class
-              virtual reality projects for some of the best companies around the
-              globe. Our award-winning creations have transformed businesses
-              through digital experiences that bind to their brand.
-            </p>
-          </div>
+          <a href="https://dribbble.com/shots/22083708-Pillowtune-A-Mindfulness-app">
+            <div>
+              <img
+                className="xl:w-[65%]"
+                src="../assets/Pillowtune.png"
+                alt="Pillowtune"
+              />
+            </div>
+            <div className="lg:absolute lg:bottom-0 lg:right-0 lg:w-[520px] xl:w-[600px] h-[150px] px-8 py-4 bg-[#B1E3E0] flex flex-col justify-center">
+              <h1 className="mb-4 text-[20px]">Pillowtune</h1>
+              <h3>Adobe photoshop, Illustrator, Figma</h3>
+            </div>
+          </a>
         </div>
       </section>
       <section
@@ -32,18 +33,19 @@ const Project = () => {
         onMouseLeave={() => cursorChangeHandler("")}
       >
         <div className="grid gap-5">
-          <div>
-            <img src="../assets/cart.png" alt="Halcyon Theme screenshot" />
-          </div>
-          <div className="lg:absolute lg:bottom-0 lg:right-0 lg:w-[520px] px-8 py-4 bg-[#B1E3E0]">
-            <h1>The leader in interactive VR</h1>
-            <p>
-              Founded in 2011, Loopstudios has been producing world-class
-              virtual reality projects for some of the best companies around the
-              globe. Our award-winning creations have transformed businesses
-              through digital experiences that bind to their brand.
-            </p>
-          </div>
+          <a href="https://dribbble.com/shots/21984234-Mankind-was-never-meant-to-die-here">
+            <div>
+              <img
+                className="xl:w-[65%]"
+                src="../assets/Interstellarr.png"
+                alt="Interstellar"
+              />
+            </div>
+            <div className="lg:absolute lg:bottom-0 lg:right-0 lg:w-[520px] xl:w-[600px] h-[150px] px-8 py-4 bg-[#B1E3E0] flex flex-col justify-center">
+              <h1 className="mb-4 text-[20px]">Interstellar</h1>
+              <h3> Illustrator, Figma</h3>
+            </div>
+          </a>
         </div>
       </section>
     </>
