@@ -37,8 +37,8 @@ const Aboutme = () => {
       </div>
       <div>
         <img
-          className="lg:h-[80%] my-8 lg:m-auto"
-          src="../assets/nilima.webp"
+          className="lg:h-[70%] xl:h-[60%] my-8 lg:m-auto"
+          src="../assets/nilima.jpg"
           alt="user"
         />
       </div>
