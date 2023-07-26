@@ -16,7 +16,7 @@ const ExternalLink = ({ href, children, label }: any) => (
 
 const Contact = () => {
   return (
-    <div className="flex flex-col w-[50%] xl:w-[50%] m-auto">
+    <div className="flex flex-col md:w-[70%] lg:w-[50%] m-auto">
       <h1 className="text-[50px] mt-[120px] font-semibold text-center">
         Get in touch
       </h1>

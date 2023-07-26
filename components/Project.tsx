@@ -7,7 +7,7 @@ const Project = () => {
   return (
     <>
       <section
-        className="relative"
+        className="md:relative"
         onMouseEnter={() => cursorChangeHandler("hovered")}
         onMouseLeave={() => cursorChangeHandler("")}
       >
@@ -28,7 +28,7 @@ const Project = () => {
         </div>
       </section>
       <section
-        className="relative mt-[100px]"
+        className="md:relative mt-[50px] md:mt-[100px]"
         onMouseEnter={() => cursorChangeHandler("hovered")}
         onMouseLeave={() => cursorChangeHandler("")}
       >
