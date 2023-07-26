@@ -2,18 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @font-face {
   font-family: "Euclid";
-  src: url("../public/font/Euclid\ Circular\ A\ Bold.ttf")
-    format("truetype");
+  src: url("../public/font/Euclid\ Circular\ A\ Bold.ttf") format("truetype");
   font-weight: bold;
 }
 
 @font-face {
   font-family: "Euclid";
-  src: url("../public/font/Euclid\ Circular\ A\ Medium.ttf")
-    format("truetype");
+  src: url("../public/font/Euclid\ Circular\ A\ Medium.ttf") format("truetype");
   font-weight: 500;
 }
 @font-face {
@@ -25,14 +22,12 @@
 
 @font-face {
   font-family: "Euclid";
-  src: url("../public/font/Euclid\ Circular\ A\ Regular.ttf")
-    format("truetype");
+  src: url("../public/font/Euclid\ Circular\ A\ Regular.ttf") format("truetype");
   font-weight: normal;
 }
 @font-face {
   font-family: "Euclid";
-  src: url("../public/font/Euclid\ Circular\ A\ Light.ttf")
-    format("truetype");
+  src: url("../public/font/Euclid\ Circular\ A\ Light.ttf") format("truetype");
   font-weight: 300;
 }
 
@@ -121,47 +116,49 @@ select {
   }
 }
 
-.ring {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 50px;
-  height: 50px;
-  border: .5px solid #BEBFC5;
-  border-radius: 100%;
-  transform: translate(-50%, -50%);
-  -webkit-transition-duration: 100ms;
-  transition-duration: 100ms;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-  will-change: width, height, transform, border;
-  z-index: 999;
-  pointer-events: none;
-}
-.dot {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 8px;
-  height: 8px;
-  background-color: #BEBFC5;
-  border-radius: 100%;
-  transform: translate(-50%, -50%);
-  z-index: 999;
-  pointer-events: none;
-}
+@media (min-width: 1024px) {
+  .ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    border: 0.5px solid #bebfc5;
+    border-radius: 100%;
+    transform: translate(-50%, -50%);
+    -webkit-transition-duration: 100ms;
+    transition-duration: 100ms;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+    will-change: width, height, transform, border;
+    z-index: 999;
+    pointer-events: none;
+  }
+  .dot {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    background-color: #bebfc5;
+    border-radius: 100%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    pointer-events: none;
+  }
 
-.ring.hovered {
-  width: 70px;
-  height: 70px;
-  color: #000000;
-  background-color: #DDDFE5;
-}
+  .ring.hovered {
+    width: 70px;
+    height: 70px;
+    color: #000000;
+    background-color: #dddfe5;
+  }
 
-.ring.hovered::after {
-  content: "View";
-  position: relative;
-  top: 20px;
-  left: 15px;
-  font-size: 1rem;
+  .ring.hovered::after {
+    content: "View";
+    position: relative;
+    top: 20px;
+    left: 15px;
+    font-size: 1rem;
+  }
 }

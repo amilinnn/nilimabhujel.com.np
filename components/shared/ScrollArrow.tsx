@@ -25,7 +25,7 @@ export default function ScrollArrow() {
   return (
     <div>
       {showButton && (
-        <div className="fixed bottom-20 right-20 text-base bg-text text-toggle cursor-pointer rounded-full p-[0.6rem] text-center h-[2.5rem] w-[2.5rem] transition duration-500 border border border-black hover:bg-black hover:text-white" onClick={scrollToTop}>
+        <div className="fixed bottom-20 right-[2rem] text-base bg-text text-toggle cursor-pointer rounded-full p-[0.6rem] text-center h-[2.5rem] w-[2.5rem] transition duration-500 border border border-black hover:bg-black hover:text-white" onClick={scrollToTop}>
           <FaChevronUp />
         </div>
       )}

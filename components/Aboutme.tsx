@@ -5,8 +5,8 @@ import React from "react";
 
 const Aboutme = () => {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 justify-between">
-      <div className="text-[18px] font-normal">
+    <div className="#about-me grid grid-cols-1 lg:grid-cols-2 justify-between">
+      <div className="text-[18px] md:text-[30px] lg:text-[18px] font-normal">
         <p>
           Hello! I'm Nilima, a passionate and creative graphic and UI/UX
           Designer, With a strong foundation in design principles and a keen eye
@@ -26,12 +26,14 @@ const Aboutme = () => {
         </p>
         <div className="flex gap-20 mt-4">
           <ul>
-            <li>Figma</li>
-            <li>Photoshop</li>
+            <li className="mb-3">Adobe Illustrator</li>
+            <li className="mb-3">Adobe Premiere Pro</li>
+            <li>Adobe Indesign</li>
           </ul>
           <ul>
-            <li>Figma</li>
-            <li>Photoshop</li>
+            <li className="mb-3">Figma</li>
+            <li className="mb-3">Photoshop</li>
+            <li>Adobe After Effects</li>
           </ul>
         </div>
       </div>

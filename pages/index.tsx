@@ -25,11 +25,11 @@ export default function Home() {
       <main>
         <section className="container m-auto">
           <Banner />
-          <section className="h-[100vh]">
+          <section className="">
             <h1 className="text-[50px] mb-8 font-semibold">About Me</h1>
             <Aboutme />
           </section>
-          <section className="mt-4">
+          <section className="md:mt-4">
             <h1 className="text-[50px] mb-8 font-semibold">Recent Work</h1>
             <Project />
           </section>
