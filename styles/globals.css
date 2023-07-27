@@ -116,7 +116,14 @@ select {
   }
 }
 
+.active {
+  overflow: hidden;
+}
+
 @media (min-width: 1024px) {
+  .active {
+    overflow: visible;
+  }
   .ring {
     position: fixed;
     top: 0;
