@@ -1,13 +1,21 @@
 "use client";
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
+import SocialMedia from "./SocialMedia";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
   const [menuIconClick, setmenuIconClick] = useState<boolean>(false);
   const [isMenuOpen, setMenuOpen] = useState<boolean>(false);
   const [scrolling, setScrolling] = useState<boolean>(false);
+
+  if (process.browser) {
+    if (menuIconClick) {
+      document.body.classList.add("overflow-y-hidden");
+    } else {
+      document.body.classList.remove("overflow-y-hidden");
+    }
+  }
 
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
@@ -31,10 +39,15 @@ const Navbar = () => {
     { href: "#contact", label: "Contact" },
   ];
 
+  const clickLink = () => {
+    setMenuOpen(!isMenuOpen);
+    setmenuIconClick(!menuIconClick);
+  };
+
   const MenuItems = () => (
     <>
       {menuItems.map((item, index) => (
-        <li key={index}>
+        <li key={index} onClick={clickLink}>
           <Link href={item.href}>{item.label}</Link>
         </li>
       ))}
@@ -66,9 +79,12 @@ const Navbar = () => {
           </nav>
         </div>
         {isMenuOpen && (
-          <nav className="lg:hidden absolute mt-3 left-0 bg-white text-black z-10 w-[100%] py-4 ">
-            <ul className="container mx-auto flex flex-col items-center space-y-4 font-normal text-[16px] ">
+          <nav className="lg:hidden absolute left-0 bg-white text-black z-10 w-[100%] h-[100vh] py-4 ">
+            <ul className="container mx-auto flex flex-col mt-[100px] items-center space-y-4 font-normal text-[20px] ">
               <MenuItems />
+              <div className="mt-10">
+                <SocialMedia />
+              </div>
             </ul>
           </nav>
         )}

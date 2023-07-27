@@ -25,15 +25,15 @@ export default function Home() {
       <main>
         <section className="container m-auto">
           <Banner />
-          <section className="">
+          <section id="about-me">
             <h1 className="text-[50px] mb-8 font-semibold">About Me</h1>
             <Aboutme />
           </section>
-          <section className="md:mt-4">
+          <section className="md:mt-4" id="recent-project">
             <h1 className="text-[50px] mb-8 font-semibold">Recent Work</h1>
             <Project />
           </section>
-          <section className="mt-12">
+          <section className="mt-12" id="contact">
             <Contact />
             <ScrollArrow/>
           </section>
