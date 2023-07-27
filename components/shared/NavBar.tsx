@@ -11,9 +11,9 @@ const Navbar = () => {
 
   if (process.browser) {
     if (menuIconClick) {
-      document.body.classList.add("overflow-y-hidden");
+      document.body.classList.add("active");
     } else {
-      document.body.classList.remove("overflow-y-hidden");
+      document.body.classList.remove("active");
     }
   }
 
