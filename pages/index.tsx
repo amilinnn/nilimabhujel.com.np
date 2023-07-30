@@ -5,15 +5,18 @@ import Project from "@/components/Project";
 import Contact from "@/components/Contact";
 import ScrollArrow from "@/components/shared/ScrollArrow";
 import Footer from "@/components/Footer";
+import { PageData } from "@/types/data";
+import { getHomePageData } from "@/service/homepage";
 
-// export const getStaticProps = async () => {
-//   const homes: PageData.IndexPageData = await getHomePageData();
-//   return {
-//     props: { homes }
-//   };
-// };
+export const getStaticProps = async () => {
+  const pages: PageData.Data = await getHomePageData();
+  return {
+    props: { pages },
+  };
+};
 
-export default function Home() {
+export default function Home({ pages }: PageData.Data) {
+  console.log(pages);
   return (
     <>
       <Head>
@@ -24,10 +27,10 @@ export default function Home() {
       </Head>
       <main>
         <section className="container m-auto">
-          <Banner />
+          <Banner pages={pages}/>
           <section id="about-me">
             <h1 className="text-[50px] mb-8 font-semibold">About Me</h1>
-            <Aboutme />
+            <Aboutme pages={pages}/>
           </section>
           <section className="md:mt-4" id="recent-project">
             <h1 className="text-[50px] mb-8 font-semibold">Recent Work</h1>
@@ -35,9 +38,9 @@ export default function Home() {
           </section>
           <section className="mt-12" id="contact">
             <Contact />
-            <ScrollArrow/>
+            <ScrollArrow />
           </section>
-          <Footer/>
+          <Footer />
         </section>
       </main>
     </>
