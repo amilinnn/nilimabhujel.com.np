@@ -1,8 +1,8 @@
 "use client";
-import { PageData } from "@/types/data";
 /* eslint-disable react/no-unescaped-entities */
-/* eslint-disable @next/next/no-img-element */
-import React from "react";
+import Image from "next/image";
+import { PageData } from "@/types/data";
+
 
 const Aboutme = ({ pages }: PageData.Data) => {
   return (
@@ -15,8 +15,13 @@ const Aboutme = ({ pages }: PageData.Data) => {
             <p className="mt-5">{page.about.skillDescription}</p>
             <div className="flex gap-20 mt-4">
               <ul>
-                {page.about.skills.skill.map((skill, index) => (
-                  <li key={index} className="mb-3">{skill}</li>
+                {page.about.tool.toolSet1.map((tool, index) => (
+                  <li key={index} className="mb-3">{tool}</li>
+                ))}
+              </ul>
+              <ul>
+                {page.about.tool.toolSet2.map((tool, index) => (
+                  <li key={index} className="mb-3">{tool}</li>
                 ))}
               </ul>
             </div>
@@ -24,11 +29,7 @@ const Aboutme = ({ pages }: PageData.Data) => {
         ))}
       </div>
       <div>
-        <img
-          className="lg:h-[70%] xl:h-[60%] my-8 lg:m-auto"
-          src="../assets/nilima.jpg"
-          alt="user"
-        />
+        <Image src={pages[0].about.profilePic.url} width={320} height={300} alt="user" className="mx-auto" />
       </div>
     </div>
   );

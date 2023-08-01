@@ -29,7 +29,7 @@ export default function Home({ pages }: PageData.Data) {
         <section className="container m-auto">
           <Banner pages={pages}/>
           <section id="about-me">
-            <h1 className="text-[50px] mb-8 font-semibold">About Me</h1>
+            <h1 className="text-[50px] mb-8 font-semibold">{pages[0].about.title}</h1>
             <Aboutme pages={pages}/>
           </section>
           <section className="md:mt-4" id="recent-project">

@@ -16,12 +16,21 @@ declare namespace Data {
     }
 
     interface About {
+      title: string;
       description: string;
-      subDescription: string
-      skillDescription: string
-      skills: {
-        skill: string[];
-      };
+      subDescription?: string;
+      skillDescription: string;
+      tool: Tool
+      profilePic: ProfilePic
+    }
+
+    interface Tool {
+      toolSet1: string[];
+      toolSet2: string[];
+    }
+    
+    interface ProfilePic {
+      url: string;
     }
   }
 }
