@@ -28,6 +28,17 @@ export const getHomePageData = async () => {
             url
           }
         }
+        project {
+          title
+          project {
+            projectImage {
+              url
+            }
+            projectTitle
+            projectTool
+            projectUrl
+          }
+        }
       }
     }
   `;

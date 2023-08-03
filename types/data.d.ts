@@ -7,6 +7,7 @@ declare namespace Data {
     interface Page {
       intro: Intro;
       about: About;
+      project: Project
     }
 
     interface Intro {
@@ -20,18 +21,34 @@ declare namespace Data {
       description: string;
       subDescription?: string;
       skillDescription: string;
-      tool: Tool
-      profilePic: ProfilePic
+      tool: Tool;
+      profilePic: ProfilePic;
     }
 
-    interface Tool {
-      toolSet1: string[];
-      toolSet2: string[];
+    interface Project {
+      title: string;
+      project: ProjectData;
     }
-    
-    interface ProfilePic {
-      url: string;
-    }
+  }
+
+  interface Tool {
+    toolSet1: string[];
+    toolSet2: string[];
+  }
+
+  interface ProfilePic {
+    url: string;
+  }
+
+  interface ProjectData {
+    projectImage: ProjectImage;
+    projectTitle: string;
+    projectTool: string;
+    projectUrl: string;
+  }
+
+  interface ProjectImage {
+    url: string;
   }
 }
 
