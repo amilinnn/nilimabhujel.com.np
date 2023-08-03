@@ -1,41 +1,27 @@
 "use client";
+import { PageData } from "@/types/data";
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 
-const Aboutme = () => {
+const Aboutme = ({ pages }: PageData.Data) => {
   return (
     <div className="#about-me grid grid-cols-1 lg:grid-cols-2 justify-between">
       <div className="text-[18px] md:text-[30px] lg:text-[18px] font-normal">
-        <p>
-          Hello! I'm Nilima, a passionate and creative graphic and UI/UX
-          Designer, With a strong foundation in design principles and a keen eye
-          for detail, I specialize in creating visually appealing and
-          user-friendly designs that leave a lasting impact. I strive to blend
-          aesthetics with functionality.
-        </p>
-        <p className="mt-5">
-          I'm a user-centered designer who believes that the best designs are
-          created with the user in mind. I use a variety of research methods to
-          understand user needs and pain points, and I use that information to
-          create designs that are both effective and enjoyable to use.
-        </p>
-
-        <p className="mt-5">
-          Here are a few technologies I’ve been working with recently:
-        </p>
-        <div className="flex gap-20 mt-4">
-          <ul>
-            <li className="mb-3">Adobe Illustrator</li>
-            <li className="mb-3">Adobe Premiere Pro</li>
-            <li>Adobe Indesign</li>
-          </ul>
-          <ul>
-            <li className="mb-3">Figma</li>
-            <li className="mb-3">Photoshop</li>
-            <li>Adobe After Effects</li>
-          </ul>
-        </div>
+        {pages.map((page, index: number) => (
+          <div key={index}>
+            <p>{page.about.description}</p>
+            <p className="mt-5">{page.about.subDescription}</p>
+            <p className="mt-5">{page.about.skillDescription}</p>
+            <div className="flex gap-20 mt-4">
+              <ul>
+                {page.about.skills.skill.map((skill, index) => (
+                  <li key={index} className="mb-3">{skill}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
       </div>
       <div>
         <img
