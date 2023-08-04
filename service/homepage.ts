@@ -28,7 +28,7 @@ export const getHomePageData = async () => {
             url
           }
         }
-        project {
+        recentProject {
           title
           project {
             projectImage {

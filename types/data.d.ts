@@ -7,7 +7,7 @@ declare namespace Data {
     interface Page {
       intro: Intro;
       about: About;
-      project: Project
+      recentProject: RecentProject;
     }
 
     interface Intro {
@@ -25,9 +25,9 @@ declare namespace Data {
       profilePic: ProfilePic;
     }
 
-    interface Project {
+    interface RecentProject {
       title: string;
-      project: ProjectData;
+      project: Project[];
     }
   }
 
@@ -40,7 +40,7 @@ declare namespace Data {
     url: string;
   }
 
-  interface ProjectData {
+  interface Project {
     projectImage: ProjectImage;
     projectTitle: string;
     projectTool: string;
