@@ -13,11 +13,19 @@ export const getHomePageData = async () => {
           description
         }
         about {
+          title
           description
           subDescription
           skillDescription
-          skills {
-            skill
+          tool {
+            ... on ToolSection {
+              id
+              toolSet1
+              toolSet2
+            }
+          }
+          profilePic {
+            url
           }
         }
       }
