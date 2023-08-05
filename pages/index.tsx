@@ -26,17 +26,20 @@ export default function Home({ pages }: PageData.Data) {
       </Head>
       <main>
         <section className="container m-auto">
-          <Banner pages={pages}/>
+          <Banner pages={pages} />
           <section id="about-me">
             <h1 className="text-[50px] mb-8 font-semibold">{pages[0].about.title}</h1>
-            <Aboutme pages={pages}/>
+            <Aboutme pages={pages} />
           </section>
           <section className="md:mt-4" id="recent-project">
             <h1 className="text-[50px] mb-8 font-semibold">{pages[0].recentProject.title}</h1>
             <Project pages={pages}/>
           </section>
           <section className="mt-12" id="contact">
-            <Contact />
+            <h1 className="text-[50px] mt-[120px] font-semibold text-center">
+            {pages[0].contact.title}
+            </h1>
+            <Contact  pages={pages}/>
             <ScrollArrow />
           </section>
           <Footer />

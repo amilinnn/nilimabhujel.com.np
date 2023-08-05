@@ -39,6 +39,14 @@ export const getHomePageData = async () => {
             projectUrl
           }
         }
+        contact {
+          title
+          description
+          emailUrl
+          dribbbleUrl
+          behanceLink
+          linkedinUrl
+        }
       }
     }
   `;

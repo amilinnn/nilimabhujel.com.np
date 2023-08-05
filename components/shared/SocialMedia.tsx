@@ -1,3 +1,4 @@
+import { PageData } from "@/types/data";
 import { FaBehance, FaLinkedinIn, FaDribbble } from "react-icons/fa";
 
 const ExternalLink = ({ href, children, label }: any) => (
@@ -12,20 +13,20 @@ const ExternalLink = ({ href, children, label }: any) => (
   </a>
 );
 
-const SocialMedia = () => {
+const SocialMedia = ({ pages }: PageData.Data) => {
   return (
     <div className="flex justify-center gap-8 my-10">
       <ExternalLink
-        href="https://www.behance.net/nilimabhujel0"
+        href={`${pages[0].contact.behanceLink}`}
         label="Behance"
       >
         <FaBehance size={20} />
       </ExternalLink>
-      <ExternalLink href="https://dribbble.com/amilinnnn" label="Dribbble">
+      <ExternalLink href={`${pages[0].contact.dribbbleUrl}`} label="Dribbble">
         <FaDribbble size={20} />
       </ExternalLink>
       <ExternalLink
-        href="https://www.linkedin.com/in/nilima-bhujel-61768024a/"
+        href={`${pages[0].contact.linkedinUrl}`}
         label="Linkedin"
       >
         <FaLinkedinIn size={20} />
