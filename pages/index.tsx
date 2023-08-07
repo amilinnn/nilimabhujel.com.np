@@ -16,7 +16,6 @@ export const getStaticProps = async () => {
 };
 
 export default function Home({ pages }: PageData.Data) {
-  console.log(pages);
   return (
     <>
       <Head>
@@ -33,8 +32,8 @@ export default function Home({ pages }: PageData.Data) {
             <Aboutme pages={pages}/>
           </section>
           <section className="md:mt-4" id="recent-project">
-            <h1 className="text-[50px] mb-8 font-semibold">Recent Work</h1>
-            <Project />
+            <h1 className="text-[50px] mb-8 font-semibold">{pages[0].recentProject.title}</h1>
+            <Project pages={pages}/>
           </section>
           <section className="mt-12" id="contact">
             <Contact />
