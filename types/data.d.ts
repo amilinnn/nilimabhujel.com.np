@@ -8,6 +8,7 @@ declare namespace Data {
       intro: Intro;
       about: About;
       recentProject: RecentProject;
+      contact: Contact;
     }
 
     interface Intro {
@@ -28,6 +29,24 @@ declare namespace Data {
     interface RecentProject {
       title: string;
       project: Project[];
+    }
+    
+    interface Tool {
+      toolSet1: string[];
+      toolSet2: string[];
+    }
+
+    interface ProfilePic {
+      url: string;
+    }
+
+    interface Contact {
+      title: string;
+      description: string;
+      emailUrl: string;
+      dribbbleUrl: string;
+      behanceLink: string;
+      linkedinUrl: string;
     }
   }
 
