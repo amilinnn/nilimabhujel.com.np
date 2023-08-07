@@ -3,7 +3,6 @@ import { PageData } from "@/types/data";
 import React from "react";
 
 const Banner = ({ pages }: PageData.Data) => {
-  console.log(pages)
   return (
     <div className="h-[90vh] xl:h-[80vh] flex flex-col justify-center items-center mb-[100px] text-center">
       {pages.map((page, index: number) => (

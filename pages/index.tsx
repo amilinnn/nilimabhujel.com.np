@@ -10,12 +10,13 @@ import { getHomePageData } from "@/service/homepage";
 
 export const getStaticProps = async () => {
   const pages: PageData.Data = await getHomePageData();
+  const metaTag: PageData.Data = await getHomePageData();
   return {
-    props: { pages },
+    props: { pages, metaTag },
   };
 };
 
-export default function Home({ pages }: PageData.Data) {
+export default function Home({ pages, metaTags }: PageData.Data) {
   return (
     <>
       <Head>

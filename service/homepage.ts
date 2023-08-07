@@ -6,6 +6,13 @@ const graphcms = getGraphcms();
 export const getHomePageData = async () => {
   const query = gql`
     query {
+      metaTags {
+        author
+        description
+        title:
+        websiteUrl
+        keywords
+      }
       pages {
         intro {
           heading
