@@ -1,7 +1,16 @@
 declare namespace Data {
   declare namespace PageData {
     interface Data {
+      metaTags?: MetaTags[];
       pages: Page[];
+    }
+
+    interface MetaTags {
+      author: string
+      description: string
+      title: string
+      websiteUrl: string
+      keywords: string
     }
 
     interface Page {

@@ -5,7 +5,6 @@ import { useMouseCursor } from "@/utils/MouseContext";
 import { PageData } from "@/types/data";
 
 const Project = ({ pages }: PageData.Data) => {
-  console.log(pages);
   const { cursorChangeHandler } = useMouseCursor();
   return (
     <>
