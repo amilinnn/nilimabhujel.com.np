@@ -29,7 +29,7 @@ const Aboutme = ({ pages }: PageData.Data) => {
         ))}
       </div>
       <div>
-        <Image src={pages[0].about.profilePic.url} width={320} height={300} alt="user" className="mx-auto" />
+        <Image src={pages[0].about.profilePic.url} width={320} height={300} alt="user" className="mx-auto rounded-tl-[50px] rounded-br-[50px]" />
       </div>
     </div>
   );
