@@ -31,6 +31,10 @@ export default function Home({ pages, metaTags }: PageData.Data) {
         <meta property="og:title" content={metaTags?.title} />
         <meta property="og:description" content={metaTags?.description} />
         <meta property="og:url" content={metaTags?.websiteUrl} />
+        <meta
+        name="google-site-verification"
+        content={metaTags?.googleSiteID}
+      />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>

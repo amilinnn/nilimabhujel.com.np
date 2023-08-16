@@ -11,6 +11,7 @@ declare namespace Data {
       title: string
       websiteUrl: string
       keywords: string
+      googleSiteID: string
     }
 
     interface Page {

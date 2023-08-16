@@ -12,6 +12,7 @@ export const getHomePageData = async () => {
         title:
         websiteUrl
         keywords
+        googleSiteID
       }
       pages {
         intro {
