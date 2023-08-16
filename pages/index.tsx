@@ -6,35 +6,35 @@ import Contact from "@/components/Contact";
 import ScrollArrow from "@/components/shared/ScrollArrow";
 import Footer from "@/components/Footer";
 import { PageData } from "@/types/data";
-import { getHomePageData } from "@/service/homepage";
+import { getHomePageData, getMetaTagData } from "@/service/homepage";
 
 export const getStaticProps = async () => {
   const pages: PageData.Data = await getHomePageData();
-  const metaTag: PageData.Data = await getHomePageData();
+  const metaTags: PageData.MetaData = await getMetaTagData();
   return {
-    props: { pages, metaTag },
+    props: { pages, metaTags },
   };
 };
 
-export default function Home({ pages, metaTags }: PageData.Data) {
+export default function Home({ pages, metaTags }: PageData.Datas) {
   return (
     <>
       <Head>
-        <title>{metaTags?.title}</title>
-        <meta name="description" content={metaTags?.description} />
+        <title>{metaTags[0].title}</title>
+        <meta name="description" content={metaTags[0].description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="keywords" content={metaTags?.keywords} />
-        <meta name="author" content={metaTags?.title} />
+        <meta name="keywords" content={metaTags[0].keywords} />
+        <meta name="author" content={metaTags[0].title} />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content={metaTags?.title} />
-        <meta property="og:title" content={metaTags?.title} />
-        <meta property="og:description" content={metaTags?.description} />
-        <meta property="og:url" content={metaTags?.websiteUrl} />
+        <meta property="og:site_name" content={metaTags[0].title} />
+        <meta property="og:title" content={metaTags[0].title} />
+        <meta property="og:description" content={metaTags[0].description} />
+        <meta property="og:url" content={metaTags[0].websiteUrl} />
         <meta
-        name="google-site-verification"
-        content={metaTags?.googleSiteID}
-      />
+          name="google-site-verification"
+          content={metaTags[0].googleSiteId}
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>

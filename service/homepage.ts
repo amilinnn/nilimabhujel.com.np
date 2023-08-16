@@ -9,10 +9,9 @@ export const getHomePageData = async () => {
       metaTags {
         author
         description
-        title:
+        title
         websiteUrl
         keywords
-        googleSiteID
       }
       pages {
         intro {
@@ -62,4 +61,22 @@ export const getHomePageData = async () => {
 
   const res = await graphcms.request(query);
   return res.pages;
+};
+
+export const getMetaTagData = async () => {
+  const query = gql`
+    query {
+      metaTags {
+        author
+        description
+        title
+        websiteUrl
+        keywords
+        googleSiteId
+      }
+    }
+  `;
+
+  const res = await graphcms.request(query);
+  return res.metaTags;
 };
