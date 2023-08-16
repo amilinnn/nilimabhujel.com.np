@@ -24,6 +24,7 @@ declare namespace Data {
       heading: string;
       subheading: string;
       description: string;
+      resumeUrl: string
     }
 
     interface About {

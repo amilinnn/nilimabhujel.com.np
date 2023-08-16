@@ -6,7 +6,7 @@ import { PageData } from "@/types/data";
 
 const Aboutme = ({ pages }: PageData.Data) => {
   return (
-    <div className="#about-me grid grid-cols-1 lg:grid-cols-2 justify-between">
+    <div className="#about-me grid grid-cols-1 lg:grid-cols-2 justify-between gap-8">
       <div className="text-[18px] md:text-[30px] lg:text-[18px] font-normal">
         {pages.map((page, index: number) => (
           <div key={index}>

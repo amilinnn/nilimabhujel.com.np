@@ -7,7 +7,7 @@ const ExternalLink = ({ href, children, label }: any) => (
     rel="noopener noreferrer"
     href={href}
     aria-label={label}
-    className="inline-flex items-center justify-center text-center w-10 md:w-[50px] h-10 md:h-[50px] text-base border border-black rounded-full no-underline shadow-md lg:transition-transform lg:hover:-translate-y-2 bg-white  hover:bg-[#8986C2] text-black hover:text-white hover:border-[#8986C2]"
+    className="inline-flex items-center justify-center text-center w-[50px] h-[50px] text-base border border-black rounded-full no-underline shadow-md lg:transition-transform lg:hover:-translate-y-2 bg-white  hover:bg-[#8986C2] text-black hover:text-white hover:border-[#8986C2]"
   >
     {children}
   </a>

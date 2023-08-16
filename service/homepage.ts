@@ -18,6 +18,7 @@ export const getHomePageData = async () => {
           heading
           subheading
           description
+          resumeUrl
         }
         about {
           title

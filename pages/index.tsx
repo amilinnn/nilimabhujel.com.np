@@ -40,7 +40,7 @@ export default function Home({ pages, metaTags }: PageData.Data) {
             <h1 className="text-[50px] mb-8 font-semibold">{pages[0].about.title}</h1>
             <Aboutme pages={pages} />
           </section>
-          <section className="md:mt-4" id="recent-project">
+          <section className="mt-14 md:mt-4" id="recent-project">
             <h1 className="text-[50px] mb-8 font-semibold">{pages[0].recentProject.title}</h1>
             <Project pages={pages} />
           </section>
