@@ -9,13 +9,12 @@ const Contact = ({ pages }: PageData.Data) => {
       <p className="my-[25px] text-center text-[18px] md:text-[25px] lg:text-[18px] font-normal">
       {pages[0].contact.description}
       </p>
-      <Link
+      <a
         href={`${pages[0].contact.emailUrl}`}
         className="text-[20px] md:text-[25px] lg:text-[20px] font-medium w-[50%] xl:w-[30%] mx-auto my-10 p-4 border border-black rounded text-center text-black no-underline shadow-md hover:bg-[#8986C2] hover:text-white hover:border-[#8986C2]"
-        passHref
       >
         {`Say Hello!!`}
-      </Link>
+      </a>
       <SocialMedia pages={pages}/>
     </div>
   );

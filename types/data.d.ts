@@ -34,6 +34,7 @@ declare namespace Data {
       subheading: string;
       description: string;
       resumeUrl: string
+      ctaTitle: string
     }
 
     interface About {
