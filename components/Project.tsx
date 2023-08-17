@@ -6,6 +6,8 @@ import { FaChevronRight } from "react-icons/fa";
 
 const Project = ({ pages }: PageData.Data) => {
   const { cursorChangeHandler } = useMouseCursor();
+  const projectBannerBgColor = pages[0].colorSchema.projectDetailsBgColor.hex;
+  const projectBannerTextColor = pages[0].colorSchema.projectDetailsTextColor.hex;
   return (
     <>
       {pages.map((page, index: number) => (
@@ -15,10 +17,7 @@ const Project = ({ pages }: PageData.Data) => {
               className="md:relative mb-10"
             >
               <div className="grid gap-5">
-                <div
-                  onMouseEnter={() => cursorChangeHandler("hovered")}
-                  onMouseLeave={() => cursorChangeHandler("")}
-                >
+                <div>
                   <a
                     href={project.projectUrl}
                     target="_blank"
@@ -27,10 +26,17 @@ const Project = ({ pages }: PageData.Data) => {
                       className="xl:w-[65%] rounded"
                       src={project.projectImage.url}
                       alt={project.projectTitle}
+                      onMouseEnter={() => cursorChangeHandler("hovered")}
+                      onMouseLeave={() => cursorChangeHandler("")}
                     />
                   </a>
                 </div>
-                <div className="lg:absolute lg:bottom-0 lg:right-0 lg:w-[520px] xl:w-[600px] h-[150px] px-4 md:px-8 py-4 md:py-2 bg-[#B1E3E0] flex flex-col justify-center">
+                <div className="lg:absolute lg:bottom-0 lg:right-0 lg:w-[520px] xl:w-[600px] h-[150px] px-4 md:px-8 py-4 md:py-2 flex flex-col justify-center"
+                  style={{
+                    color: projectBannerTextColor,
+                    backgroundColor: projectBannerBgColor,
+                  }}
+                >
                   <div className="flex justify-between items-center gap-8">
                     <div>
                       <h1 className="mb-4 text-[20px] md:text-[30px]">{project.projectTitle}</h1>

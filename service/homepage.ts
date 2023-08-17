@@ -13,6 +13,7 @@ export const getHomePageData = async () => {
           description
           resumeUrl
           ctaTitle
+          navBarHeading
         }
         about {
           title
@@ -48,6 +49,29 @@ export const getHomePageData = async () => {
           dribbbleUrl
           behanceLink
           linkedinUrl
+        }
+        colorSchema {
+          headingColor {
+            hex
+          }
+          hoverBgColor {
+            hex
+          }
+          hoverTextColor {
+            hex
+          }
+          iconBgColor {
+            hex
+          }
+          iconColor {
+            hex
+          }
+          projectDetailsBgColor {
+            hex
+          }
+          projectDetailsTextColor {
+            hex
+          }
         }
       }
     }

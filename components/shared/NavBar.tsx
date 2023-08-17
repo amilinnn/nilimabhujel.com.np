@@ -63,7 +63,7 @@ const Navbar = ({ pageProps }: any) => {
       <div className="container m-auto px-8">
         <div className="relative flex items-center justify-between">
           <div>
-            <h1 className="text-[25px] font-semibold">Nilima</h1>
+            <h1 className="text-[30px] font-semibold">{pages[0].intro.navBarHeading}</h1>
           </div>
           <button className="lg:hidden rounded" onClick={toggleMenu}>
             {menuIconClick ? (
@@ -88,7 +88,7 @@ const Navbar = ({ pageProps }: any) => {
                   target="_blank"
                   className="text-[20px] md:text-[25px] lg:text-[20px] font-medium w-[50%] xl:w-[30%] mx-auto my-10 p-4 border rounded text-center no-underline shadow-md bg-[#8986C2] text-white border-[#8986C2]"
                 >
-                  View Full Resume
+                  {pages[0].intro.ctaTitle}
                 </a>
               </li>
               <li>

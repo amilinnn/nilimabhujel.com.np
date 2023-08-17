@@ -1,9 +1,12 @@
 "use client";
+import React, { useState } from "react";
 import { PageData } from "@/types/data";
-import Link from "next/link";
-import React from "react";
 
 const Banner = ({ pages }: PageData.Data) => {
+  const [hover, setHover] = useState(false);
+  const textColor = pages[0].colorSchema.headingColor.hex;
+  const hoverColor = pages[0].colorSchema.hoverTextColor.hex;
+  const hoverBgColor = pages[0].colorSchema.hoverBgColor.hex;
   return (
     <div className="h-[90vh] xl:h-[80vh] flex flex-col justify-center items-center mb-[100px] text-center">
       {pages.map((page, index: number) => (
@@ -20,7 +23,14 @@ const Banner = ({ pages }: PageData.Data) => {
           <a
             href={page.intro.resumeUrl}
             target="_blank"
-            className="mt-5 text-[20px] md:text-[25px] lg:text-[20px] font-medium w-[50%] xl:w-[30%] mx-auto my-10 p-4 border border-black rounded text-center text-black no-underline shadow-md hover:bg-[#8986C2] hover:text-white hover:border-[#8986C2]"
+            className="mt-5 text-[20px] md:text-[25px] lg:text-[20px] font-medium w-[50%] xl:w-[30%] mx-auto my-10 p-4 border border-black rounded text-center text-black no-underline shadow-md transition duration-300 ease-in-out"
+            style={{
+              color: hover ? hoverColor : textColor,
+              backgroundColor: hover ? hoverBgColor : "",
+              border: hover ? hoverBgColor : "",
+            }}
+            onMouseOver={() => setHover(true)}
+            onMouseLeave={() => setHover(false)}
           >
             {page.intro.ctaTitle}
           </a>
