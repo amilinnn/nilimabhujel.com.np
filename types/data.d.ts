@@ -14,12 +14,12 @@ declare namespace Data {
     }
 
     interface MetaTags {
-      author: string
-      description: string
-      title: string
-      websiteUrl: string
-      keywords: string
-      googleSiteId: string
+      author: string;
+      description: string;
+      title: string;
+      websiteUrl: string;
+      keywords: string;
+      googleSiteId: string;
     }
 
     interface Page {
@@ -27,14 +27,16 @@ declare namespace Data {
       about: About;
       recentProject: RecentProject;
       contact: Contact;
+      colorSchema: ColorSchema;
     }
 
     interface Intro {
       heading: string;
       subheading: string;
       description: string;
-      resumeUrl: string
-      ctaTitle: string
+      resumeUrl: string;
+      ctaTitle: string;
+      navBarHeading: string
     }
 
     interface About {
@@ -50,7 +52,7 @@ declare namespace Data {
       title: string;
       project: Project[];
     }
-    
+
     interface Tool {
       toolSet1: string[];
       toolSet2: string[];
@@ -88,6 +90,20 @@ declare namespace Data {
 
   interface ProjectImage {
     url: string;
+  }
+
+  interface ColorSchema {
+    headingColor: Color;
+    hoverBgColor: Color;
+    hoverTextColor: Color;
+    iconBgColor: Color;
+    iconColor: Color;
+    projectDetailsBgColor: Color;
+    projectDetailsTextColor: Color;
+  }
+
+  interface Color {
+    hex: string;
   }
 }
 

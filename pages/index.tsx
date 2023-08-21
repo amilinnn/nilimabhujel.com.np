@@ -9,14 +9,15 @@ import { PageData } from "@/types/data";
 import { getHomePageData, getMetaTagData } from "@/service/homepage";
 
 export const getStaticProps = async () => {
-  const pages: PageData.Data = await getHomePageData();
   const metaTags: PageData.MetaData = await getMetaTagData();
+  const pages: PageData.Data = await getHomePageData();
   return {
-    props: { pages, metaTags },
+    props: { metaTags, pages },
   };
 };
 
-export default function Home({ pages, metaTags }: PageData.Datas) {
+export default function Home({ metaTags, pages }: PageData.Datas) {
+  const headingColor = pages[0].colorSchema.headingColor.hex
   return (
     <>
       <Head>
@@ -41,19 +42,19 @@ export default function Home({ pages, metaTags }: PageData.Datas) {
         <section className="container m-auto">
           <Banner pages={pages} />
           <section id="about-me">
-            <h1 className="text-[50px] mb-8 font-semibold">{pages[0].about.title}</h1>
+            <h1 className="text-[50px] mb-8 font-semibold" style={{ color: headingColor }}>{pages[0].about.title}</h1>
             <Aboutme pages={pages} />
           </section>
           <section className="mt-14" id="recent-project">
-            <h1 className="text-[50px] mb-8 font-semibold">{pages[0].recentProject.title}</h1>
+            <h1 className="text-[50px] mb-8 font-semibold" style={{ color: headingColor }}>{pages[0].recentProject.title}</h1>
             <Project pages={pages} />
           </section>
           <section className="mt-14" id="contact">
-            <h1 className="text-[50px] mt-[120px] font-semibold text-center">
+            <h1 className="text-[50px] mt-[120px] font-semibold text-center" style={{ color: headingColor }}>
               {pages[0].contact.title}
             </h1>
             <Contact pages={pages} />
-            <ScrollArrow />
+            <ScrollArrow pages={pages}/>
           </section>
           <Footer />
         </section>
