@@ -6,20 +6,20 @@ import { PageData } from "@/types/data";
 
 const Aboutme = ({ pages }: PageData.Data) => {
   return (
-    <div className="#about-me grid grid-cols-1 lg:grid-cols-2 justify-between">
+    <div className="#about-me grid grid-cols-1 lg:grid-cols-2 justify-between gap-8">
       <div className="text-[18px] md:text-[30px] lg:text-[18px] font-normal">
         {pages.map((page, index: number) => (
           <div key={index}>
             <p>{page.about.description}</p>
             <p className="mt-5">{page.about.subDescription}</p>
             <p className="mt-5">{page.about.skillDescription}</p>
-            <div className="flex gap-20 mt-4">
-              <ul>
+            <div className="flex gap-20 mt-4 ml-4">
+              <ul className="list-disc">
                 {page.about.tool.toolSet1.map((tool, index) => (
                   <li key={index} className="mb-3">{tool}</li>
                 ))}
               </ul>
-              <ul>
+              <ul className="list-disc">
                 {page.about.tool.toolSet2.map((tool, index) => (
                   <li key={index} className="mb-3">{tool}</li>
                 ))}

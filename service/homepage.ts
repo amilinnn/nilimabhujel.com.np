@@ -6,18 +6,13 @@ const graphcms = getGraphcms();
 export const getHomePageData = async () => {
   const query = gql`
     query {
-      metaTags {
-        author
-        description
-        title:
-        websiteUrl
-        keywords
-      }
       pages {
         intro {
           heading
           subheading
           description
+          resumeUrl
+          ctaTitle
         }
         about {
           title
@@ -60,4 +55,22 @@ export const getHomePageData = async () => {
 
   const res = await graphcms.request(query);
   return res.pages;
+};
+
+export const getMetaTagData = async () => {
+  const query = gql`
+    query {
+      metaTags {
+        author
+        description
+        title
+        websiteUrl
+        keywords
+        googleSiteId
+      }
+    }
+  `;
+
+  const res = await graphcms.request(query);
+  return res.metaTags;
 };

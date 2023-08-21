@@ -4,7 +4,8 @@ import Link from "next/link";
 import SocialMedia from "./SocialMedia";
 import { FaBars, FaTimes } from "react-icons/fa";
 
-const Navbar = () => {
+const Navbar = ({ pageProps }: any) => {
+  const { pages } = pageProps
   const [menuIconClick, setmenuIconClick] = useState<boolean>(false);
   const [isMenuOpen, setMenuOpen] = useState<boolean>(false);
   const [scrolling, setScrolling] = useState<boolean>(false);
@@ -56,9 +57,8 @@ const Navbar = () => {
 
   return (
     <header
-      className={`lg:h-[80px] h-[50px] flex items-center sticky top-0 z-10 bg-white ${
-        scrolling ? "shadow-md" : ""
-      }`}
+      className={`lg:h-[80px] h-[50px] flex items-center sticky top-0 z-10 bg-white ${scrolling ? "shadow-md" : ""
+        }`}
     >
       <div className="container m-auto px-8">
         <div className="relative flex items-center justify-between">
@@ -80,11 +80,20 @@ const Navbar = () => {
         </div>
         {isMenuOpen && (
           <nav className="lg:hidden absolute left-0 bg-white text-black z-10 w-[100%] h-[100vh] py-4 ">
-            <ul className="container mx-auto flex flex-col mt-[100px] items-center space-y-4 font-normal text-[20px] ">
+            <ul className="container mx-auto flex flex-col gap-[30px] mt-[100px] items-center space-y-4 font-normal text-[20px] ">
               <MenuItems />
-              <div className="mt-10">
-                <SocialMedia />
-              </div>
+              <li>
+                <a
+                  href={pages[0].intro.resumeUrl}
+                  target="_blank"
+                  className="text-[20px] md:text-[25px] lg:text-[20px] font-medium w-[50%] xl:w-[30%] mx-auto my-10 p-4 border rounded text-center no-underline shadow-md bg-[#8986C2] text-white border-[#8986C2]"
+                >
+                  View Full Resume
+                </a>
+              </li>
+              <li>
+                <SocialMedia pages={pages} />
+              </li>
             </ul>
           </nav>
         )}
