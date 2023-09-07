@@ -6,15 +6,13 @@ import { useRouter } from "next/router";
 
 interface Props {
   children: ReactNode;
-  pageProps: any
 }
 
-const Layout = ({ children, pageProps }: Props) => {
+const Layout = ({ children }: Props) => {
   const router = useRouter();
   return (
     <>
       <MouseContextProvider>
-        <header>{router.pathname !== "/404" && <NavBar pageProps={pageProps}/>}</header>
         {children}
         <DotRing />
       </MouseContextProvider>

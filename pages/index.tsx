@@ -1,4 +1,5 @@
 import Head from "next/head";
+import NavBar from "@/components/shared/NavBar";
 import Aboutme from "@/components/Aboutme";
 import Banner from "@/components/Banner";
 import Project from "@/components/Project";
@@ -7,6 +8,7 @@ import ScrollArrow from "@/components/shared/ScrollArrow";
 import Footer from "@/components/Footer";
 import { PageData } from "@/types/data";
 import { getHomePageData, getMetaTagData } from "@/service/homepage";
+import { useRouter } from "next/router";
 
 export const getStaticProps = async () => {
   const metaTags: PageData.MetaData = await getMetaTagData();
@@ -18,6 +20,7 @@ export const getStaticProps = async () => {
 
 export default function Home({ metaTags, pages }: PageData.Datas) {
   const headingColor = pages[0].colorSchema.headingColor.hex
+  const router = useRouter();
   return (
     <>
       <Head>
@@ -38,6 +41,7 @@ export default function Home({ metaTags, pages }: PageData.Datas) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <header>{router.pathname !== "/404" && <NavBar pages={pages} />}</header>
       <main>
         <section className="container m-auto">
           <Banner pages={pages} />
@@ -54,7 +58,7 @@ export default function Home({ metaTags, pages }: PageData.Datas) {
               {pages[0].contact.title}
             </h1>
             <Contact pages={pages} />
-            <ScrollArrow pages={pages}/>
+            <ScrollArrow pages={pages} />
           </section>
           <Footer />
         </section>
