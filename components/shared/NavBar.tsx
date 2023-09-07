@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import SocialMedia from "./SocialMedia";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { PageData } from "@/types/data";
 
-const Navbar = ({ pageProps }: any) => {
-  const { pages } = pageProps
+const Navbar = ({ pages }: PageData.Data) => {
   const [menuIconClick, setmenuIconClick] = useState<boolean>(false);
   const [isMenuOpen, setMenuOpen] = useState<boolean>(false);
   const [scrolling, setScrolling] = useState<boolean>(false);
